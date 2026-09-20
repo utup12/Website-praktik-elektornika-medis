@@ -1,0 +1,22 @@
+/* Tema gelap untuk kenyamanan membaca; pilihan pengguna disimpan oleh script.js. */
+.theme-toggle { display:inline-grid; place-items:center; width:34px; height:34px; margin-left:8px; border:1px solid #bdd3d8; border-radius:50%; background:#fff; color:#0c5964; cursor:pointer; font-size:1rem; }
+.theme-toggle:hover { border-color:#168b8a; background:#edf8f7; }
+
+body.dark-mode { --ink:#eef6f8; --navy:#08151e; --teal:#45d7c5; --mist:#101720; --sky:#111d28; --paper:#070b10; --muted:#adbdc6; --line:#2a3945; --white:#101720; background:var(--paper); color:var(--ink); }
+body.dark-mode .site-header, body.dark-mode .identity-bar, body.dark-mode .platform-bar { background:#0a0e14; border-color:#24313b; }
+body.dark-mode .institution-name strong, body.dark-mode .course-brand { color:#75e3d5; }
+body.dark-mode .institution-name span, body.dark-mode .platform-title { color:#aec3cf; }
+body.dark-mode .main-nav a { color:#c3d5dc; }
+body.dark-mode .main-nav a.active, body.dark-mode .main-nav a:hover { color:#62ddcf; }
+body.dark-mode .theme-toggle { background:#151c24; border-color:#3a4e5a; color:#f6ca48; }
+body.dark-mode .hero, body.dark-mode .page-hero { background:linear-gradient(135deg,#0a0f15,#101b25); }
+body.dark-mode .intro, body.dark-mode .modules, body.dark-mode .platform, body.dark-mode .page-content { background:#0b1016; }
+body.dark-mode .outcomes, body.dark-mode .learning-flow, body.dark-mode .report-upload { background:#101720; }
+body.dark-mode .module-card, body.dark-mode .feature-grid article, body.dark-mode .content-card, body.dark-mode .upload-panel { background:#121a23; border-color:#2c3d49; }
+body.dark-mode .module-card.accent { background:#123034; }
+body.dark-mode .module-card.featured, body.dark-mode .cta { background:#08121a; }
+body.dark-mode .hero-text, body.dark-mode .intro > p, body.dark-mode .outcome-grid p, body.dark-mode .module-card p, body.dark-mode .feature-grid p, body.dark-mode .flow-copy > p, body.dark-mode .page-hero p, body.dark-mode .content-card p, body.dark-mode .page-list p, body.dark-mode .upload-copy > p:not(.eyebrow), body.dark-mode .selected-file { color:#b7cbd3; }
+body.dark-mode .upload-dropzone { background:#0c141c; border-color:#416c70; }
+body.dark-mode .upload-dropzone strong, body.dark-mode .flow-list h3, body.dark-mode .content-card h2, body.dark-mode .page-list strong { color:#eaf4f6; }
+body.dark-mode .ai-boundary { background:#0d1820; color:#c0d0d6; }
+body.dark-mode .main-nav.open { background:#0d141b; border-color:#2c3d49; }

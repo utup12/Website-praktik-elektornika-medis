@@ -1,0 +1,44 @@
+.report-upload {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+  padding-top: 60px;
+  background: var(--mist);
+}
+
+.report-upload h2 { font-size: clamp(2rem, 3.7vw, 3.45rem); line-height: 1.12; letter-spacing: -.06em; }
+.upload-copy > p:not(.eyebrow) { color: var(--muted); max-width: 500px; }
+.upload-note { color: #267c7b !important; font-size: .76rem; font-weight: 800; }
+.upload-panel { padding: 28px; background: #fff; border: 1px solid var(--line); box-shadow: 12px 12px 0 #d3e7e6; }
+.upload-dropzone { min-height: 180px; display: grid; place-items: center; align-content: center; gap: 7px; padding: 20px; border: 2px dashed #8dbfbe; background: #f5fbfb; color: var(--muted); text-align: center; cursor: pointer; transition: border-color .2s, background .2s; }
+.upload-dropzone:hover, .upload-dropzone.dragover { border-color: #168b8a; background: #e6f7f5; }
+.upload-dropzone strong { color: var(--ink); }
+.upload-dropzone span:not(.upload-icon) { font-size: .78rem; }
+.upload-icon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #d3efeb; color: #0b7775; font-size: 1.3rem; font-weight: 800; }
+.upload-dropzone input { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
+.selected-file, .upload-status { min-height: 24px; margin: 15px 0; color: var(--muted); font-size: .78rem; }
+.upload-status { margin: 12px 0 0; color: #137e7b; font-weight: 700; }
+.upload-panel .button { border: 0; cursor: pointer; }
+
+@media (max-width: 980px) { .report-upload { grid-template-columns: 1fr; gap: 34px; } }
+
+/* Halaman laporan: panel unggah ditempatkan di samping judul halaman. */
+.report-page .page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(360px, .78fr);
+  gap: 64px;
+  align-items: center;
+  padding-top: 54px;
+  padding-bottom: 54px;
+}
+.report-page .page-hero h1 { margin-bottom: 18px; }
+.report-hero-panel { margin: 0; box-shadow: 12px 12px 0 #bddede; }
+.report-hero-panel .upload-dropzone { min-height: 150px; }
+.report-page .report-upload { display: block; padding-top: 64px; }
+.report-page .report-upload .upload-copy { max-width: 650px; }
+
+@media (max-width: 900px) {
+  .report-page .page-hero { grid-template-columns: 1fr; gap: 30px; }
+  .report-hero-panel { max-width: 620px; }
+}

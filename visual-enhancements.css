@@ -1,0 +1,60 @@
+/* Aksen visual pendukung: satu ilustrasi laboratorium dan ikon ringan. */
+.hero-visual {
+  background-image: linear-gradient(135deg, rgba(8,45,70,.92), rgba(12,57,82,.78)), url('assets/lab-instrumentasi-medis.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.outcome-grid article::before {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  background: #d5efed;
+  color: #087a77;
+  font-size: 1rem;
+  font-weight: 800;
+}
+.outcome-grid article:nth-child(1)::before { content: '✓'; }
+.outcome-grid article:nth-child(2)::before { content: '⌁'; }
+.outcome-grid article:nth-child(3)::before { content: '⌕'; }
+.outcome-grid article:nth-child(4)::before { content: '↗'; }
+.outcome-grid .number { display: none; }
+
+.module-card::before {
+  display: inline-grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 8px;
+  background: rgba(18,126,123,.12);
+  color: #0d7775;
+  font-size: .95rem;
+  font-weight: 800;
+}
+.module-card:nth-child(1)::before { content: '◫'; }
+.module-card:nth-child(2)::before { content: '◌'; }
+.module-card:nth-child(3)::before { content: '⌁'; }
+.module-card:nth-child(4)::before { content: '∿'; }
+.module-card:nth-child(5)::before { content: '⌇'; }
+.module-card:nth-child(6)::before { content: '↗'; }
+.module-card.featured::before { background:rgba(255,255,255,.12); color:var(--teal); }
+.module-card h3 { margin-top: 16px; }
+.outcomes { scroll-margin-top: 100px; }
+.outcomes-intro { max-width: 560px; margin: 12px 0 0; color: var(--muted); }
+
+/* Foto kampus memperkuat identitas UNY tanpa mengurangi keterbacaan isi. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  background-image: linear-gradient(90deg, rgba(248,253,253,.88) 0%, rgba(248,253,253,.78) 49%, rgba(248,253,253,.48) 100%), url('assets/ft-uny.jpg');
+  background-position: center, center;
+  background-size: cover, cover;
+}
+.hero-copy, .hero-visual { position: relative; z-index: 1; }
+body.dark-mode .hero { background-image: none; }
+@media (max-width: 760px) {
+  .hero { background-image: linear-gradient(180deg, rgba(248,253,253,.88), rgba(248,253,253,.72)), url('assets/ft-uny.jpg'); }
+}

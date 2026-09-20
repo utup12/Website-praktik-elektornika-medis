@@ -1,0 +1,4 @@
+.ai-status { display:inline-flex; align-items:center; gap:8px; margin-bottom:18px; padding:7px 11px; border-radius:999px; background:#fff3c8; color:#725c00; font-size:.74rem; font-weight:800; }
+.ai-status::before { content:""; width:7px; height:7px; border-radius:50%; background:#e2a000; }
+.ai-boundary { margin-top:30px; padding:21px 23px; border-left:3px solid #168b8a; background:#eff8f7; color:#42616a; }
+.ai-boundary strong { display:block; margin-bottom:5px; color:var(--ink); }

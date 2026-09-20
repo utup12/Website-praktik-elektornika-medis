@@ -1,0 +1,8 @@
+.feature-grid-compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 690px;
+}
+
+@media (max-width: 680px) {
+  .feature-grid-compact { grid-template-columns: 1fr; }
+}

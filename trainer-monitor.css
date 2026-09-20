@@ -1,0 +1,24 @@
+.trainer-access { display:flex; align-items:center; justify-content:space-between; gap:30px; margin-top:50px; padding:31px; background:#e4f2f2; border-left:4px solid #168b8a; }
+.trainer-access h2 { margin:0 0 8px; font-size:1.55rem; letter-spacing:-.04em; }
+.trainer-access p:not(.eyebrow) { max-width:670px; margin:0; color:var(--muted); font-size:.9rem; }
+.trainer-screen { padding:20px; background:#092d46; border:10px solid #d6e9ea; box-shadow:16px 18px 0 #badbdd; color:#d5f5ef; }
+.trainer-screen-top { display:flex; align-items:center; gap:9px; padding-bottom:14px; border-bottom:1px solid #35647d; color:#a6c7d3; font:500 .7rem 'DM Mono',monospace; letter-spacing:.08em; }
+.trainer-status { margin-left:auto; color:#5ee6d0; }
+.connect-button { padding:6px 10px; border:1px solid #5ee6d0; border-radius:4px; background:transparent; color:#7ff2df; cursor:pointer; font:500 .66rem 'DM Mono',monospace; letter-spacing:.03em; }
+.connect-button:hover { background:rgba(94,230,208,.12); }
+.connect-message { min-height:20px; margin:11px 0 0; color:#6db8b9; font-size:.72rem; text-align:right; }
+.trainer-dot { width:7px; height:7px; border-radius:50%; background:#5ee6d0; box-shadow:0 0 0 4px rgba(94,230,208,.12); }
+.trainer-wave { width:100%; height:auto; margin:18px 0 14px; }
+.trainer-chart-label { margin:16px 0 0; color:#87b7c6; font:500 .68rem 'DM Mono',monospace; letter-spacing:.06em; }
+.trainer-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid #35647d; }
+.trainer-grid.heart-only { grid-template-columns:repeat(2,1fr); }
+.trainer-grid div { padding:13px 10px 2px; border-left:1px solid #35647d; }
+.trainer-grid div:first-child { padding-left:0; border-left:0; }.trainer-grid span { display:block; color:#94b5c1; font:500 .61rem 'DM Mono',monospace; }.trainer-grid strong { font:500 1.24rem 'DM Mono',monospace; }.trainer-grid small { color:#95bdc8; font-size:.62rem; }
+.trainer-disclaimer { margin:13px 0 0; color:#8fb3c0; font-size:.66rem; text-align:right; }
+body.dark-mode .trainer-access { background:#123f50; } body.dark-mode .trainer-screen { border-color:#26556a; box-shadow:16px 18px 0 #0b283a; }
+.ai-boundary { margin-top:30px; padding:21px 23px; border-left:3px solid #168b8a; background:#eff8f7; color:#42616a; }
+.ai-boundary strong { display:block; margin-bottom:5px; color:var(--ink); }
+body.dark-mode .ai-boundary { background:#0d3646; color:#bdd0d7; }
+.trainer-meta { display:flex; flex-wrap:wrap; gap:10px 22px; margin:18px 0 0; color:#8fb7c5; font:600 .78rem/1.4 'DM Mono', monospace; }
+.trainer-meta strong { color:#d9f8f3; }
+@media(max-width:680px){.trainer-access{display:block}.trainer-access .button{margin-top:20px}.trainer-grid strong{font-size:1rem}}

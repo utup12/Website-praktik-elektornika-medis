@@ -1,0 +1,31 @@
+/* Penyesuaian lambang UNY yang bersumber dari gambar contoh pengguna. */
+.uny-seal img {
+  width: 705px;
+  max-width: none;
+  height: auto;
+  top: -15px;
+  left: -24px;
+}
+
+.course-brand {
+  color: var(--uny-blue);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -.035em;
+  text-decoration: none;
+}
+
+.footer-course {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -.035em;
+}
+
+@media (max-width: 680px) {
+  .uny-seal img {
+    width: 705px;
+    top: -15px;
+    left: -24px;
+  }
+}

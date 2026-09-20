@@ -1,0 +1,22 @@
+/* Penyempurnaan interaksi awal: seluruh data di bawah ini tetap berada di perangkat pengguna. */
+.form-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin:22px 0; }
+.form-field { display:grid; gap:8px; color:var(--ink); font-weight:700; font-size:.92rem; }
+.form-field input, .form-field select { width:100%; padding:13px 14px; border:1px solid #c7dbe0; border-radius:8px; background:#fff; color:#153550; font:inherit; }
+.form-field.full { grid-column:1 / -1; }
+.quiz-panel { max-width:860px; padding:34px; border:1px solid #c7dbe0; background:#fff; box-shadow:12px 12px 0 #d5edf0; }
+.quiz-panel h2 { margin:0 0 8px; color:#10334d; }
+.quiz-meta { color:#58728a; margin:0 0 26px; }
+.quiz-question { padding:20px 0; border-top:1px solid #dbe8eb; }
+.quiz-question legend { padding:0; color:#163953; font-size:1.02rem; font-weight:800; }
+.quiz-options { display:grid; gap:10px; margin-top:14px; }
+.quiz-options label { display:flex; align-items:center; gap:10px; color:#375a70; cursor:pointer; }
+.quiz-result { min-height:1.5em; margin:18px 0 0; color:#007e7b; font-weight:700; }
+.trainer-meta { display:flex; flex-wrap:wrap; gap:10px 22px; margin:18px 0 0; color:#8fb7c5; font:600 .78rem/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.trainer-meta strong { color:#d9f8f3; }
+.report-hero-panel { align-self:center; }
+body.dark-mode .form-field, body.dark-mode .quiz-panel { color:#dce9ee; background:#111a22; border-color:#294352; box-shadow:12px 12px 0 #071014; }
+body.dark-mode .form-field input, body.dark-mode .form-field select { color:#e1f0f1; background:#0c141b; border-color:#355463; }
+body.dark-mode .quiz-panel h2 { color:#e8f5f6; }
+body.dark-mode .quiz-meta, body.dark-mode .quiz-options label { color:#a9c2ce; }
+body.dark-mode .quiz-question { border-color:#294352; }
+@media (max-width:640px) { .form-grid { grid-template-columns:1fr; } .form-field.full { grid-column:auto; } .quiz-panel { padding:24px 18px; box-shadow:7px 7px 0 #d5edf0; } body.dark-mode .quiz-panel { box-shadow:7px 7px 0 #071014; } }
