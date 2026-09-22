@@ -3,14 +3,29 @@
   flex: 0 0 68px;
   width: 68px;
   height: 68px;
-  background: url("assets/logo-uny.png?v=2") center / contain no-repeat;
-  border: 0;
+  overflow: visible;
   border-radius: 0;
+  background: none;
   box-shadow: none;
 }
 
 .uny-seal span {
-  display: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform: none;
+  clip-path: none;
+}
+
+.uny-seal img {
+  display: block;
+  position: static;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  opacity: 1;
 }
 
 .course-brand {
