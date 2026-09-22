@@ -1,10 +1,35 @@
-/* Penyesuaian lambang UNY yang bersumber dari gambar contoh pengguna. */
+/* Lambang UNY pada sumber saat ini berada di dalam gambar header 968×205 px.
+   Tampilkan hanya area lambang; wadah tautan tetap transparan. */
+.uny-seal {
+  display: block;
+  position: relative;
+  flex: 0 0 86px;
+  width: 86px;
+  height: 86px;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.uny-seal span {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: block;
+  width: 86px;
+  height: 86px;
+  overflow: hidden;
+  clip-path: circle(50% at center);
+}
+
 .uny-seal img {
-  width: 705px;
+  position: absolute;
+  display: block;
+  width: 968px;
   max-width: none;
   height: auto;
-  top: -15px;
-  left: -24px;
+  top: -27px;
+  left: -36px;
 }
 
 .course-brand {
@@ -23,9 +48,14 @@
 }
 
 @media (max-width: 680px) {
-  .uny-seal img {
-    width: 705px;
-    top: -15px;
-    left: -24px;
+  .uny-seal {
+    flex-basis: 54px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .uny-seal span {
+    transform: scale(.627907);
+    transform-origin: top left;
   }
 }
