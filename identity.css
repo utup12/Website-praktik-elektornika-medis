@@ -1,3 +1,4 @@
+/* Logo UNY tampil utuh tanpa wadah atau pemotongan */
 .uny-seal {
   display: block;
   flex: 0 0 68px;
@@ -48,5 +49,48 @@
     flex-basis: 54px;
     width: 54px;
     height: 54px;
+  }
+
+  .platform-bar {
+    gap: 8px;
+  }
+
+  .course-brand {
+    flex: 1;
+    min-width: 0;
+    font-size: .85rem;
+  }
+
+  .theme-toggle {
+    flex: 0 0 34px;
+    margin-left: 0;
+  }
+
+  /* Tombol menu terlihat jelas di HP */
+  .menu-toggle {
+    display: grid;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 40px;
+    margin-left: 0;
+    padding: 9px;
+    align-content: center;
+    justify-items: center;
+    gap: 5px;
+    border: 0;
+    border-radius: 8px;
+    background: #0fa67a;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    background: #fff;
+  }
+
+  .main-nav {
+    top: 100%;
   }
 }
