@@ -121,8 +121,7 @@
     }
 
     (function restorePageTheme() {
-      const saved = localStorage.getItem('pem-theme');
-      if (!saved) return;
+      const saved = localStorage.getItem('pem-theme') || 'light';
       document.documentElement.dataset.theme = saved;
       const button = document.querySelector('.theme-control');
       if (button) button.textContent = saved === 'dark' ? '☀' : '◐';
