@@ -1,3 +1,23 @@
+const platformBar = document.querySelector('.platform-bar');
+
+// Samakan header halaman turunan dengan header Beranda tanpa mengubah tata letak:
+// Menu berlabel di kiri, informasi mata kuliah dan tombol tema di kanan.
+const legacyToggle = platformBar?.querySelector('.menu-toggle');
+if (legacyToggle) {
+  const navigation = platformBar.querySelector('.main-nav');
+  const courseBrand = platformBar.querySelector('.course-brand');
+  const dropdown = document.createElement('details');
+  dropdown.className = 'nav-dropdown';
+  dropdown.innerHTML = '<summary><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span><span>Menu</span></summary>';
+  if (navigation) dropdown.appendChild(navigation);
+  legacyToggle.replaceWith(dropdown);
+
+  const headerTools = document.createElement('div');
+  headerTools.className = 'header-tools';
+  if (courseBrand) headerTools.appendChild(courseBrand);
+  platformBar.appendChild(headerTools);
+}
+
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 
@@ -7,15 +27,14 @@ themeStylesheet.rel = 'stylesheet';
 themeStylesheet.href = 'theme.css?v=20260924-2';
 document.head.appendChild(themeStylesheet);
 
-const platformBar = document.querySelector('.platform-bar');
-
-if (platformBar) {
+if (platformBar && !platformBar.querySelector('.theme-control')) {
   const themeToggle = document.createElement('button');
-  themeToggle.className = 'theme-toggle';
+  themeToggle.className = 'theme-control';
   themeToggle.type = 'button';
   themeToggle.setAttribute('aria-label', 'Aktifkan mode gelap');
   themeToggle.title = 'Ubah mode tampilan';
-  platformBar.insertBefore(themeToggle, document.querySelector('.menu-toggle'));
+  const headerTools = platformBar.querySelector('.header-tools') || platformBar;
+  headerTools.appendChild(themeToggle);
 
   const applyTheme = (isDark) => {
     document.body.classList.toggle('dark-mode', isDark);
@@ -140,7 +159,7 @@ if (toggle && nav) toggle.addEventListener('click', () => {
 document.querySelectorAll('.main-nav a').forEach((link) => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
   });
 });
 
