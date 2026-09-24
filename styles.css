@@ -446,6 +446,42 @@ html[data-theme="dark"] .main-nav a {
   color: #b4c8cf;
 }
 
+/* Navigasi pada halaman turunan: selalu sediakan Menu dan jalan ke Beranda. */
+.platform-bar .menu-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 5px;
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  order: 1;
+}
+
+.platform-bar .menu-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+}
+
+.platform-bar .home-link {
+  order: 2;
+  margin-left: 2px;
+  color: #0f7473;
+  font-size: .78rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.platform-bar .home-link:hover { text-decoration: underline; }
+.platform-bar .menu-toggle + .main-nav { order: 4; }
+html[data-theme="dark"] .platform-bar .menu-toggle { background: #102b3a; border-color: #315467; color: #e8f2f4; }
+html[data-theme="dark"] .platform-bar .home-link { color: #75e3d5; }
+
 @media (max-width: 680px) {
   .platform-bar {
     padding-right: 18px;
