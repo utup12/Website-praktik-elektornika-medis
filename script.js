@@ -9,17 +9,6 @@ document.head.appendChild(themeStylesheet);
 
 const platformBar = document.querySelector('.platform-bar');
 
-// Halaman selain Beranda masih memakai tombol navigasi lama. Tambahkan jalan
-// pulang yang eksplisit agar pengguna tidak perlu mengandalkan tombol browser.
-if (toggle && platformBar && !platformBar.querySelector('.home-link')) {
-  const homeLink = document.createElement('a');
-  homeLink.className = 'home-link';
-  homeLink.href = 'index.html';
-  homeLink.textContent = '← Beranda';
-  homeLink.setAttribute('aria-label', 'Kembali ke Beranda');
-  platformBar.insertBefore(homeLink, toggle);
-}
-
 if (platformBar) {
   const themeToggle = document.createElement('button');
   themeToggle.className = 'theme-toggle';
