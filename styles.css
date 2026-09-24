@@ -97,6 +97,123 @@
   }
 }
 
+/* =====================================================
+   PERBAIKAN FINAL NAVIGASI TANPA JAVASCRIPT EKSTERNAL
+   ===================================================== */
+.platform-bar > .theme-toggle {
+  display: none !important;
+}
+
+.nav-dropdown {
+  position: relative;
+  order: 1;
+}
+
+.nav-dropdown summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: .82rem;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-dropdown[open] summary {
+  border-color: #74aaa9;
+  background: var(--mist);
+}
+
+.nav-dropdown[open] .menu-icon i:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-dropdown[open] .menu-icon i:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-dropdown[open] .menu-icon i:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.nav-dropdown .main-nav,
+.nav-dropdown .main-nav.open {
+  display: none !important;
+}
+
+.nav-dropdown[open] .main-nav {
+  display: grid !important;
+  position: absolute;
+  z-index: 100;
+  top: calc(100% + 9px);
+  left: 0;
+  width: min(390px, calc(100vw - 40px));
+  margin: 0;
+  padding: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(12, 53, 84, .2);
+}
+
+.header-tools {
+  order: 2;
+}
+
+.theme-control {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0f7473;
+  font: inherit;
+  cursor: pointer;
+}
+
+html[data-theme="dark"] .nav-dropdown summary,
+html[data-theme="dark"] .nav-dropdown[open] .main-nav,
+html[data-theme="dark"] .theme-control {
+  background: #0c2839;
+  color: #e7f1f3;
+}
+
+@media (max-width: 680px) {
+  .nav-dropdown summary {
+    padding: 8px 10px;
+  }
+
+  .nav-dropdown[open] .main-nav {
+    position: fixed;
+    top: 134px;
+    right: 14px;
+    left: 14px;
+    width: auto;
+  }
+
+  .theme-control {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+  }
+}
+
 /* Tampilan training kit pada halaman Beranda */
 .training-showcase {
   display: grid;
@@ -363,4 +480,36 @@ html[data-theme="dark"] .main-nav a {
     width: 34px;
     height: 34px;
   }
+}
+
+/* Menjaga seluruh isi tetap terbaca ketika mode gelap aktif. */
+html[data-theme="dark"] .hero,
+html[data-theme="dark"] .training-showcase,
+html[data-theme="dark"] .intro,
+html[data-theme="dark"] .modules,
+html[data-theme="dark"] .platform,
+html[data-theme="dark"] .signal-showcase {
+  background: #0b2434;
+  color: #e7f1f3;
+}
+
+html[data-theme="dark"] .training-photo,
+html[data-theme="dark"] .feature-grid article {
+  background: #102e3d;
+  border-color: #294657;
+}
+
+html[data-theme="dark"] .training-copy h2,
+html[data-theme="dark"] .intro h2,
+html[data-theme="dark"] .section-heading h2 {
+  color: #e7f1f3;
+}
+
+html[data-theme="dark"] .training-notice {
+  background: #102e3d;
+  color: #c4d5db;
+}
+
+html[data-theme="dark"] .training-notice strong {
+  color: #ffffff;
 }

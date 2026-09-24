@@ -22,25 +22,27 @@
       <div class="institution-name"><strong>Universitas Negeri Yogyakarta</strong><span>Fakultas Teknik · Program Studi Pendidikan Teknik Elektronika</span></div>
     </div>
     <div class="platform-bar">
-      <button class="nav-menu-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-navigation">
-        <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span>Menu</span>
-      </button>
-
-      <nav class="main-nav" id="main-navigation" aria-label="Navigasi utama">
-        <a class="active" href="index.html">Beranda</a>
-        <a href="materi.html">Materi</a>
-        <a href="jobsheet.html">Jobsheet</a>
-        <a href="praktikum.html">Praktikum</a>
-        <a href="evaluasi.html">Evaluasi</a>
-        <a href="laporan.html">Unggah Laporan</a>
-        <a href="asisten-ai.html">Asisten AI</a>
-        <a href="profil-dosen.html">Profil Dosen</a>
-        <a href="tentang.html">Tentang</a>
-      </nav>
+      <details class="nav-dropdown">
+        <summary>
+          <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Menu</span>
+        </summary>
+        <nav class="main-nav" aria-label="Navigasi utama">
+          <a class="active" href="index.html">Beranda</a>
+          <a href="materi.html">Materi</a>
+          <a href="jobsheet.html">Jobsheet</a>
+          <a href="praktikum.html">Praktikum</a>
+          <a href="evaluasi.html">Evaluasi</a>
+          <a href="laporan.html">Unggah Laporan</a>
+          <a href="asisten-ai.html">Asisten AI</a>
+          <a href="profil-dosen.html">Profil Dosen</a>
+          <a href="tentang.html">Tentang</a>
+        </nav>
+      </details>
 
       <div class="header-tools">
         <a class="course-brand" href="#beranda">Praktik Elektronika Medis</a>
+        <button class="theme-control" type="button" aria-label="Ubah mode warna" title="Ubah mode warna" onclick="togglePageTheme()">◐</button>
       </div>
     </div>
   </header>
@@ -107,7 +109,24 @@
   </main>
 
   <footer id="tentang"><div class="footer-brand"><p class="footer-course">Praktik Elektronika Medis</p><p>Program Studi Pendidikan Teknik Elektronika<br>Fakultas Teknik · Universitas Negeri Yogyakarta</p></div><div><h3>Alamat Kampus</h3><p>Kampus Karangmalang<br>Yogyakarta 55281</p><a href="https://ft.uny.ac.id" target="_blank" rel="noopener">ft.uny.ac.id ↗</a></div><div><h3>Hubungi Admin</h3><a href="mailto:ft@uny.ac.id">ft@uny.ac.id</a><a href="https://wa.me/6289529199119" target="_blank" rel="noopener">WhatsApp Help Desk</a><p>Senin–Jumat · 08.00–16.00 WIB</p></div><p class="footer-note">© 2026 Fakultas Teknik UNY<br>Dibuat untuk pembelajaran, bukan diagnosis medis.</p></footer>
-  <script src="navigation.js"></script>
+  <script>
+    function togglePageTheme() {
+      const root = document.documentElement;
+      const button = document.querySelector('.theme-control');
+      const dark = root.dataset.theme !== 'dark';
+      root.dataset.theme = dark ? 'dark' : 'light';
+      localStorage.setItem('pem-theme', root.dataset.theme);
+      if (button) button.textContent = dark ? '☀' : '◐';
+    }
+
+    (function restorePageTheme() {
+      const saved = localStorage.getItem('pem-theme');
+      if (!saved) return;
+      document.documentElement.dataset.theme = saved;
+      const button = document.querySelector('.theme-control');
+      if (button) button.textContent = saved === 'dark' ? '☀' : '◐';
+    })();
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
