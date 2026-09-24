@@ -184,8 +184,8 @@
   justify-content: space-between;
 }
 
-.platform-bar .menu-toggle {
-  display: inline-flex;
+.platform-bar .nav-menu-toggle {
+  display: inline-flex !important;
   align-items: center;
   gap: 10px;
   margin: 0;
@@ -214,20 +214,20 @@
   transition: transform .2s ease, opacity .2s ease;
 }
 
-.menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(1) {
+.nav-menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
 
-.menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(2) {
+.nav-menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(2) {
   opacity: 0;
 }
 
-.menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(3) {
+.nav-menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
 
 .platform-bar .main-nav {
-  display: none;
+  display: none !important;
   position: absolute;
   z-index: 30;
   top: calc(100% + 8px);
@@ -244,7 +244,7 @@
 }
 
 .platform-bar .main-nav.open {
-  display: grid;
+  display: grid !important;
 }
 
 .platform-bar .main-nav a {
@@ -265,6 +265,21 @@
   margin-left: auto;
 }
 
+/* Tombol tema lama dari script.js dipertahankan dan dipindahkan ke kanan. */
+.platform-bar > .nav-menu-toggle {
+  order: 1;
+}
+
+.platform-bar > .header-tools {
+  order: 2;
+}
+
+.platform-bar > .theme-toggle {
+  order: 3;
+  flex: 0 0 38px;
+  margin-left: 0;
+}
+
 .theme-toggle {
   display: grid;
   place-items: center;
@@ -280,7 +295,7 @@
 }
 
 .theme-toggle:hover,
-.platform-bar .menu-toggle:hover {
+.platform-bar .nav-menu-toggle:hover {
   border-color: #8dbbbb;
   background: var(--mist);
 }
@@ -327,7 +342,7 @@ html[data-theme="dark"] .main-nav a {
     width: auto;
   }
 
-  .platform-bar .menu-toggle {
+  .platform-bar .nav-menu-toggle {
     padding: 8px 10px;
   }
 
