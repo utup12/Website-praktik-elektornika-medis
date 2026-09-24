@@ -1,116 +1,36 @@
-/* =====================================================
-   PERBAIKAN MODE GELAP
-   Dimuat paling akhir agar warna putih lama tidak menimpa tema.
-   ===================================================== */
-
-html[data-theme="dark"] body,
-html.dark body,
-body.dark,
-body.dark-mode,
-body.dark-theme {
-  background: #071621 !important;
-  color: #e8f2f4 !important;
-}
-
-html[data-theme="dark"] .training-showcase,
-html.dark .training-showcase,
-body.dark .training-showcase,
-body.dark-mode .training-showcase,
-body.dark-theme .training-showcase {
-  background: #0b1c28 !important;
-  color: #e8f2f4 !important;
-}
-
-html[data-theme="dark"] .training-copy,
-html.dark .training-copy,
-body.dark .training-copy,
-body.dark-mode .training-copy,
-body.dark-theme .training-copy {
-  background: transparent !important;
-  color: #e8f2f4 !important;
-}
-
-html[data-theme="dark"] .training-copy h2,
-html[data-theme="dark"] .training-copy p,
-html.dark .training-copy h2,
-html.dark .training-copy p,
-body.dark .training-copy h2,
-body.dark .training-copy p,
-body.dark-mode .training-copy h2,
-body.dark-mode .training-copy p,
-body.dark-theme .training-copy h2,
-body.dark-theme .training-copy p {
-  color: #e8f2f4 !important;
-}
-
-html[data-theme="dark"] .training-copy .eyebrow,
-html.dark .training-copy .eyebrow,
-body.dark .training-copy .eyebrow,
-body.dark-mode .training-copy .eyebrow,
-body.dark-theme .training-copy .eyebrow {
-  color: #42d6c5 !important;
-}
-
-html[data-theme="dark"] .training-notice,
-html.dark .training-notice,
-body.dark .training-notice,
-body.dark-mode .training-notice,
-body.dark-theme .training-notice {
-  background: #102b3a !important;
-  border-left-color: #31cbbb !important;
-  color: #c9dce2 !important;
-}
-
-html[data-theme="dark"] .training-notice strong,
-html.dark .training-notice strong,
-body.dark .training-notice strong,
-body.dark-mode .training-notice strong,
-body.dark-theme .training-notice strong {
-  color: #ffffff !important;
-}
-
-html[data-theme="dark"] .training-photo,
-html.dark .training-photo,
-body.dark .training-photo,
-body.dark-mode .training-photo,
-body.dark-theme .training-photo {
-  background: #102b3a !important;
-  border-color: #315061 !important;
-  box-shadow: 22px 24px 0 #153846 !important;
-}
-
-html[data-theme="dark"] .training-photo figcaption,
-html.dark .training-photo figcaption,
-body.dark .training-photo figcaption,
-body.dark-mode .training-photo figcaption,
-body.dark-theme .training-photo figcaption {
-  color: #abc2ca !important;
-}
-
-/* Bagian konten lain ikut menyesuaikan. */
-html[data-theme="dark"] :is(.intro, .modules, .platform, .signal-showcase),
-html.dark :is(.intro, .modules, .platform, .signal-showcase),
-body.dark :is(.intro, .modules, .platform, .signal-showcase),
-body.dark-mode :is(.intro, .modules, .platform, .signal-showcase),
-body.dark-theme :is(.intro, .modules, .platform, .signal-showcase) {
-  background: #0b1c28 !important;
-  color: #e8f2f4 !important;
-}
-
-html[data-theme="dark"] :is(.intro, .modules, .platform) h2,
-html.dark :is(.intro, .modules, .platform) h2,
-body.dark :is(.intro, .modules, .platform) h2,
-body.dark-mode :is(.intro, .modules, .platform) h2,
-body.dark-theme :is(.intro, .modules, .platform) h2 {
-  color: #e8f2f4 !important;
-}
-
-@media (max-width: 680px) {
-  html[data-theme="dark"] .training-photo,
-  html.dark .training-photo,
-  body.dark .training-photo,
-  body.dark-mode .training-photo,
-  body.dark-theme .training-photo {
-    box-shadow: 13px 15px 0 #153846 !important;
-  }
-}
+diff --git a/theme.css b/theme.css
+--- a/theme.css
++++ b/theme.css
+@@ -10,9 +10,22 @@ body.dark-mode .main-nav a { color:#c3d5dc; }
+ body.dark-mode .main-nav a.active, body.dark-mode .main-nav a:hover { color:#62ddcf; }
+ body.dark-mode .theme-toggle { background:#151c24; border-color:#3a4e5a; color:#f6ca48; }
+ body.dark-mode .hero, body.dark-mode .page-hero { background:linear-gradient(135deg,#0a0f15,#101b25); }
++/* Bagian beranda tambahan juga harus mengikuti tema yang sedang dipilih. */
++body.dark-mode .training-showcase, body.dark-mode .signal-showcase { background:#0b1016; }
++body.dark-mode .training-photo { background:linear-gradient(145deg,#111d28,#0d151e); border-color:#2c3d49; box-shadow:22px 24px 0 #071014; }
++body.dark-mode .training-photo figcaption, body.dark-mode .training-copy > p:not(.eyebrow), body.dark-mode .signal-showcase-copy > p:last-child { color:#b7cbd3; }
++body.dark-mode .training-notice { background:#101720; }
++body.dark-mode .training-notice strong { color:#eaf4f6; }
+ body.dark-mode .intro, body.dark-mode .modules, body.dark-mode .platform, body.dark-mode .page-content { background:#0b1016; }
+ body.dark-mode .outcomes, body.dark-mode .learning-flow, body.dark-mode .report-upload { background:#101720; }
+ body.dark-mode .module-card, body.dark-mode .feature-grid article, body.dark-mode .content-card, body.dark-mode .upload-panel { background:#121a23; border-color:#2c3d49; }
++/* Kartu modul memakai warna eksplisit pada stylesheet utama; timpa secara tegas
++   agar teks terang tidak pernah berada di atas latar terang. */
++body.dark-mode .module-card:not(.featured) { background:#121a23 !important; border-color:#2c3d49 !important; color:#eef6f8; }
++body.dark-mode .module-card:not(.featured) h3 { color:#eef6f8; }
++body.dark-mode .module-card:not(.featured) p { color:#b7cbd3; }
++body.dark-mode .module-card:not(.featured)::before { background:#193542; color:#75e3d5; }
++body.dark-mode .module-card.accent { background:#123034 !important; }
+ body.dark-mode .module-card.accent { background:#123034; }
+ body.dark-mode .module-card.featured, body.dark-mode .cta { background:#08121a; }
+diff --git a/script.js b/script.js
+--- a/script.js
++++ b/script.js
+@@ -3,7 +3,8 @@ const nav = document.querySelector('.main-nav');
+ 
+ const themeStylesheet = document.createElement('link');
+ themeStylesheet.rel = 'stylesheet';
+-themeStylesheet.href = 'theme.css';
++// Versi pada URL mencegah browser memakai stylesheet tema lama setelah pembaruan.
++themeStylesheet.href = 'theme.css?v=20260924-2';
+ document.head.appendChild(themeStylesheet);
