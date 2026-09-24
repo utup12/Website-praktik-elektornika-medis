@@ -24,7 +24,7 @@ const nav = document.querySelector('.main-nav');
 const themeStylesheet = document.createElement('link');
 themeStylesheet.rel = 'stylesheet';
 // Versi pada URL mencegah browser memakai stylesheet tema lama setelah pembaruan.
-themeStylesheet.href = 'theme.css?v=20260924-2';
+themeStylesheet.href = 'theme.css?v=20260924-3';
 document.head.appendChild(themeStylesheet);
 
 if (platformBar && !platformBar.querySelector('.theme-control')) {

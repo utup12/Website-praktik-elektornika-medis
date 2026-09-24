@@ -9,6 +9,11 @@ body.dark-mode .institution-name span, body.dark-mode .platform-title { color:#a
 body.dark-mode .main-nav a { color:#c3d5dc; }
 body.dark-mode .main-nav a.active, body.dark-mode .main-nav a:hover { color:#62ddcf; }
 body.dark-mode .theme-toggle { background:#151c24; border-color:#3a4e5a; color:#f6ca48; }
+body.dark-mode .nav-dropdown summary { background:#10202c; border-color:#31505d; color:#e8f2f4; }
+body.dark-mode .nav-dropdown summary:hover, body.dark-mode .nav-dropdown[open] summary { background:#162b38; border-color:#47717b; }
+body.dark-mode .nav-dropdown[open] .main-nav { background:#10202c; border-color:#31505d; }
+body.dark-mode .nav-dropdown .main-nav a { color:#d6e5e9; }
+body.dark-mode .nav-dropdown .main-nav a:hover, body.dark-mode .nav-dropdown .main-nav a.active { background:#193743; color:#75e3d5; }
 body.dark-mode .hero, body.dark-mode .page-hero { background:linear-gradient(135deg,#0a0f15,#101b25); }
 /* Bagian beranda tambahan juga harus mengikuti tema yang sedang dipilih. */
 body.dark-mode .training-showcase, body.dark-mode .signal-showcase { background:#0b1016; }
