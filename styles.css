@@ -174,3 +174,178 @@
     max-width: none;
   }
 }
+
+/* =====================================================
+   NAVIGASI RINGKAS
+   Menu di kiri, nama mata kuliah dan dark mode di kanan
+   ===================================================== */
+.platform-bar {
+  position: relative;
+  justify-content: space-between;
+}
+
+.platform-bar .menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: .82rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: grid;
+  gap: 4px;
+}
+
+.menu-icon i {
+  display: block;
+  width: 17px;
+  height: 2px;
+  border-radius: 99px;
+  background: currentColor;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.platform-bar .main-nav {
+  display: none;
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 8px);
+  left: max(4vw, 32px);
+  width: min(390px, calc(100vw - 40px));
+  margin: 0;
+  padding: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(12, 53, 84, .18);
+}
+
+.platform-bar .main-nav.open {
+  display: grid;
+}
+
+.platform-bar .main-nav a {
+  padding: 10px 12px;
+  border-radius: 7px;
+  font-size: .78rem;
+}
+
+.platform-bar .main-nav a:hover,
+.platform-bar .main-nav a.active {
+  background: var(--mist);
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0f7473;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.platform-bar .menu-toggle:hover {
+  border-color: #8dbbbb;
+  background: var(--mist);
+}
+
+/* Warna dasar mode gelap */
+html[data-theme="dark"] {
+  --ink: #e7f1f3;
+  --paper: #081d2c;
+  --muted: #a7bbc3;
+  --line: #294657;
+  --mist: #102e3d;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .site-header,
+html[data-theme="dark"] .platform-bar {
+  background: #081d2c;
+  color: var(--ink);
+}
+
+html[data-theme="dark"] .identity-bar,
+html[data-theme="dark"] .platform-bar .main-nav,
+html[data-theme="dark"] .platform-bar .menu-toggle,
+html[data-theme="dark"] .theme-toggle {
+  background: #0c2839;
+  color: #e7f1f3;
+}
+
+html[data-theme="dark"] .institution-name span,
+html[data-theme="dark"] .main-nav a {
+  color: #b4c8cf;
+}
+
+@media (max-width: 680px) {
+  .platform-bar {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .platform-bar .main-nav {
+    top: calc(100% + 7px);
+    right: 14px;
+    left: 14px;
+    width: auto;
+  }
+
+  .platform-bar .menu-toggle {
+    padding: 8px 10px;
+  }
+
+  .header-tools {
+    gap: 8px;
+  }
+
+  .course-brand {
+    max-width: 155px;
+    overflow: hidden;
+    font-size: .78rem;
+    line-height: 1.2;
+    text-align: right;
+  }
+
+  .theme-toggle {
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+  }
+}
