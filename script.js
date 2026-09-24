@@ -21,6 +21,16 @@ if (legacyToggle) {
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 
+// Tautan panduan tersedia konsisten pada menu setiap halaman.
+if (nav && !nav.querySelector('a[href="panduan-praktikum.html"]')) {
+  const guideLink = document.createElement('a');
+  guideLink.href = 'panduan-praktikum.html';
+  guideLink.textContent = 'Panduan Praktikum';
+  if (window.location.pathname.endsWith('panduan-praktikum.html')) guideLink.classList.add('active');
+  const practicalLink = nav.querySelector('a[href="praktikum.html"]');
+  practicalLink?.insertAdjacentElement('afterend', guideLink);
+}
+
 const themeStylesheet = document.createElement('link');
 themeStylesheet.rel = 'stylesheet';
 // Versi pada URL mencegah browser memakai stylesheet tema lama setelah pembaruan.
