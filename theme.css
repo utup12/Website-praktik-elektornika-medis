@@ -10,6 +10,12 @@ body.dark-mode .main-nav a { color:#c3d5dc; }
 body.dark-mode .main-nav a.active, body.dark-mode .main-nav a:hover { color:#62ddcf; }
 body.dark-mode .theme-toggle { background:#151c24; border-color:#3a4e5a; color:#f6ca48; }
 body.dark-mode .hero, body.dark-mode .page-hero { background:linear-gradient(135deg,#0a0f15,#101b25); }
+/* Bagian beranda tambahan juga harus mengikuti tema yang sedang dipilih. */
+body.dark-mode .training-showcase, body.dark-mode .signal-showcase { background:#0b1016; }
+body.dark-mode .training-photo { background:linear-gradient(145deg,#111d28,#0d151e); border-color:#2c3d49; box-shadow:22px 24px 0 #071014; }
+body.dark-mode .training-photo figcaption, body.dark-mode .training-copy > p:not(.eyebrow), body.dark-mode .signal-showcase-copy > p:last-child { color:#b7cbd3; }
+body.dark-mode .training-notice { background:#101720; }
+body.dark-mode .training-notice strong { color:#eaf4f6; }
 body.dark-mode .intro, body.dark-mode .modules, body.dark-mode .platform, body.dark-mode .page-content { background:#0b1016; }
 body.dark-mode .outcomes, body.dark-mode .learning-flow, body.dark-mode .report-upload { background:#101720; }
 body.dark-mode .module-card, body.dark-mode .feature-grid article, body.dark-mode .content-card, body.dark-mode .upload-panel { background:#121a23; border-color:#2c3d49; }
